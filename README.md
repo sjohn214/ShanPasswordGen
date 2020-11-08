@@ -1,93 +1,58 @@
-# 03 JavaScript: Password Generator
+# Shan's Password Generator
 
-## Your Task
+# Project Description:
 
-This week’s homework requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+* This project was designed as a homework assignment for UNCC's coding bootcamp.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+* This application emphasizes the use of Javascript to generate a random, secure password for the user.
 
-## User Story
+* This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link.
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+# Demo Features
 
-## Acceptance Criteria
+* The following image and gif shows the web application's appearance and functionality:
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+![password generator demo](./assets/img/03-javascript-homework-demo.png)
+![password generator gif](./assets/Password%20Generator%20demo%20video.gif)
 
-## Mock-Up
+# Live URL:
+  https://sjohn214.github.io/ShanPasswordGen/
 
-The following image shows the web application's appearance and functionality:
+# Summary
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+* HTML and CSS and Javascript documents create a random password generator
 
-## Grading Requirements
+* This project emphasizes the use of using Javascript to make dynamic changes to an HMTL document.
 
-This homework is graded based on the following criteria: 
+# This project has the following features:
 
-### Technical Acceptance Criteria: 40%
+* A generate button
+This will send the user a series of prompts and confirms
 
-* Satisfies all of the above acceptance criteria plus the following:
+* After user data is collected, a random password will be generated using Javascript.
+* A Text-area will display the users password once it is generated.
 
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
+# Features:
+One HTML Pages
+* Index.html
+* Contains basic user input items and buttons with divs and ids
 
-### Deployment: 32%
+One CSS Page
+* Styles.css
+* Contains centering and styling for   html user input features
+* Contains media queries
 
-* Application deployed at live URL.
+One Javascript Page 
+  * Contains: 
+  * Variables 
+  * Arrays
+  * Value placeholders 
+  * Minimum of two event listeners 
+  * Minimum of two if/else if statements 
+  * One function outside of first event listener
 
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+# Authors
+Shannondale Page (student) <a href="https://github.com/sjohn214">Git Hub Profile</a>
+Austin Bruch (Bootcamp Instructor)
+Jon Jackson (Bootcamp TA Instructor)
+Daniel Sires (Bootcamp Tutor)
