@@ -120,15 +120,3 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
-
-// Add copy password element
-var copy = document.querySelector("#copy");
-copy.addEventListener("click",function(){
-  copyPassword();
-})
-
-function copyPassword() {
-  document.getElementById("password").querySelector();
-  document.execCommand("Copy");
-  alert("Password copiedd to clipboard!");
-}
