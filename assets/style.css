@@ -17,7 +17,8 @@ body {
   background-color: #f9fbfd;
 }
 
-.wrapper {
+.wrapper,
+.wrapper-brand {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
