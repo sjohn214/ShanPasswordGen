@@ -1,52 +1,129 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var copyBtn = document.querySelector("#copy");
 var startGen = document.getElementById("#generate");
-let values = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+?~"
-let password = "";
+let values = ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,!,@,#,$,%,^,&,*,(,),_,+,?,~"];
+
+// Password generator variables available for selection:
+
+// Special Characters:
+var specialCharc = ["~","!","@","#","$","%","^","&","*","(",")","_","+"];
+
+// Numeric Characters:
+var numericCharc = ["0","1","2","3","4","5","6","7","8","9"];
+
+// Upper Case Characters:
+var uppercaseCharc = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+// Lower Case Characters:
+var lowercaseCharc =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+let password = [""];
+
+
+
+    
 
 // Write password to the #password input, create random selection variable and convert array to string
 function generatePassword() {
-  startGen = parseInt(prompt("How  many characters would you like your password to contain? Must be between 8 and 128"));
-if (!startGen) {
+
+length = parseInt(prompt("How  many characters would you like your password to contain? Must be between 8 and 128"));
+if (!length) {
   alert("Please enter a value");
 }
 
-else if (startGen < 8 || startGen > 128) {
+else if (length < 8 || length > 128) {
   alert("Password must be at least 8 characters long and no more than 128 characters long.");
   return
 }
-numberCharc = confirm("Do you want password to contain Numeric values?");
-specialCharc = confirm("Do you want password to contain special characters values?");
-lowercaseCharc = confirm("Do you want password tocontain values in lowercase?");
-uppercaseCharc = confirm("Do you want password to contain values in upper case?");
 
-let randomPassword = [];
-  for (var i = 0; i <= startGen; i++) {
-    let password = values.charAt[Math.floor(Math.random()* Math.floor(values.length -1))];
-    randomPassword.push(password);
-    console.log(password);
-  }
-  
-  return randomPassword;
+useNumericCharc = confirm("Do you want password to contain numeric values?");
+useSpecialCharc = confirm("Do you want password to contain special characters values?");
+useLowercaseCharc = confirm("Do you want password to contain values in lowercase?");
+useUppercaseCharc = confirm("Do you want password to contain values in upper case?");
+
+if (
+  useNumericCharc === false &&
+  useSpecialCharc === false &&
+  useLowercaseCharc === false &&
+  useUppercaseCharc === false
+){
+  alert('Please include minimum of one character type and one special character.');
+  return;
 }
-  // Add password to textarea/copy generated passwords to list section
-  document.getElementById("password").value = password;
-// document.getElementById("savedPasswords").innerHTML += password; + "<br />";
 
+  
+
+function getPasswordOptions() {
+  var passwordOptions = {
+    length: length,
+    numCharc: useNumericCharc,
+    specChar: useSpecialCharc,
+    lowCharc: useLowercaseCharc,
+    upCharc: useUppercaseCharc,
+
+  };
+  return passwordOptions;
+}
+
+
+function getRandomPassword(options) {
+let randomPassword = [];
+let selectedPassword = [];
+
+
+if (options.numCharc) {
+  randomPassword = randomPassword.concat(numericCharc);
+  // selectedPassword.push(getRandom(numericCharc));
+}
+if (options.specCharc) {
+  randomPassword = randomPassword.concat(specialCharc);
+  // selectedPassword.push(getRandom(specialCharc));
+}
+if (options.lowCharc) {
+  randomPassword = randomPassword.concat(lowercaseCharc);
+  // selectedPassword.push(getRandom(lowercaseCharc));
+}
+if (options.upCharc) {
+  randomPassword = randomPassword.concat(uppercaseCharc);
+  // selectedPassword.push(getRandom(uppercaseCharc));
+}
+  for (var i = 0; i < options.length; i++) 
+  {
+    let password = randomPassword[Math.floor(Math.random()* randomPassword.length)];
+    selectedPassword.push(password);
+    console.log(randomPassword);
+    
+    
+  }
+  return selectedPassword;
+}
+var options = getPasswordOptions();
+var generatedPassword = getRandomPassword(options);
+
+var passwordString = generatedPassword.join("");
+console.log(passwordString);
+  return passwordString;
+  
+
+}
+ 
+function userText(passwordString){
+  document.getElementById("password").textContent = passwordString;
+}
+
+// Develop folder
 function writePassword(){
   var password = generatePassword();
+  console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+    // Add password to textarea/copy generated passwords to list section
+  // document.getElementById("#savedPasswords").value = password;
+
+
 }
-// function copyPassword() {
-//   var copy = copyPassword();
-//   var passwordText = document.querySelector("#password");
-//   // passwordText.value = copy.password;
-// }
+        // Add event listener to generate button
+        generateBtn.addEventListener("click", writePassword);
 
-
-// Add event listener to generate button/ copy
-generateBtn.addEventListener("click", writePassword);
-// copyBtn.addEventListener("click", copyPassword);
