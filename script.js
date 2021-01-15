@@ -20,9 +20,6 @@ var lowercaseCharc =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
 let password = [""];
 
 
-
-    
-
 // Write password to the #password input, create random selection variable and convert array to string
 function generatePassword() {
 
@@ -57,7 +54,7 @@ function getPasswordOptions() {
   var passwordOptions = {
     length: length,
     numCharc: useNumericCharc,
-    specChar: useSpecialCharc,
+    specCharc: useSpecialCharc,
     lowCharc: useLowercaseCharc,
     upCharc: useUppercaseCharc,
 
@@ -77,6 +74,7 @@ if (options.numCharc) {
 }
 if (options.specCharc) {
   randomPassword = randomPassword.concat(specialCharc);
+  console.log(specialCharc);
   // selectedPassword.push(getRandom(specialCharc));
 }
 if (options.lowCharc) {
@@ -118,10 +116,6 @@ function writePassword(){
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-    // Add password to textarea/copy generated passwords to list section
-  // document.getElementById("#savedPasswords").value = password;
-
 
 }
         // Add event listener to generate button

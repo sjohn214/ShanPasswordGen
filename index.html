@@ -26,15 +26,26 @@
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <button onclick="saved()">Copy to Clipboard</button>
         </div>
         <br />
-        <div class="div-saved_passwords">
-          <b>Saved Password List</b>
+        <div class="div-saved_passwords" id="savedPasswords">
+          <p><b>Saved Password List</b></p>
           <br />
-          <div id="savedPasswords"></div>
         </div>
       </div>
     </div>
     <script src="script.js"></script>
   </body>
+  <script>
+        // Add password to textarea/copy generated passwords to list section
+  var savedPasswords = localStorage.getItem("savedPasswords");
+
+function saved(){
+
+  var saveList = document.getElementById("password").value;
+  localStorage.setItem("savedPasswords", saveList);
+  document.getElementById("savedPasswords").innerHTML = saveList;
+}
+</script>
 </html>
